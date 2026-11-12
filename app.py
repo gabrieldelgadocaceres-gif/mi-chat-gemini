@@ -12,13 +12,13 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 for message in st.session_state.messages:
-    avatar = "👦💻" if message["role"] == "user" else "🐺"
+    avatar = "👦" if message["role"] == "user" else "🐺"
     with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
 
 if prompt := st.chat_input("Escribe tu mensaje..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user", avatar="👦💻"):
+    with st.chat_message("user", avatar="👦"):
         st.markdown(prompt)
 
     with st.chat_message("assistant", avatar="🐺"):
