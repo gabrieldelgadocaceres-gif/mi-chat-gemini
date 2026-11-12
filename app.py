@@ -3,10 +3,10 @@ import streamlit as st
 
 st.set_page_config(page_title="Mi Asistente Géminis", page_icon="🐺")
 
-# Inicializar el cliente aquí arriba para que esté disponible en todo el script
 client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
 
 st.title("Mi Chat IA Sencillo")
+
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
